@@ -25,7 +25,7 @@ db.pragma("journal_mode = WAL");
 db.pragma("foreign_keys = ON");
 
 const JWT_SECRET = "QUIVA_SECRET_KEY_CHANGE_LATER";
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 /* =========================================================
    DATABASE
