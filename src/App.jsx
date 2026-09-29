@@ -11,6 +11,7 @@ const events = [
     date: "4 October 2026",
     description: "Music, food, drinks and an unforgettable night at QUIVA.",
     price: 3000,
+  
   },
   {
     id: 2,

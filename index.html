@@ -1,13 +1,68 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quiva</title>
+
+    <meta
+      name="description"
+      content="QUIVA Club & Restaurant — Hotel, Restaurant, Events and Member Community"
+    />
+
+    <!-- PWA -->
+    <meta name="theme-color" content="#c99a3e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- QUIVA App Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- QUIVA App Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/icon-192.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="/icon-192.png"
+    />
+
+    <title>QUIVA Club & Restaurant</title>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- React -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- QUIVA Service Worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(function () {
+              console.log("QUIVA app service worker registered");
+            })
+            .catch(function (error) {
+              console.error(
+                "QUIVA service worker registration failed:",
+                error
+              );
+            });
+        });
+      }
+    </script>
   </body>
 </html>
+```
